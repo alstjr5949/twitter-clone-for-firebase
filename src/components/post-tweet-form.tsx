@@ -77,8 +77,6 @@ export default function PostTweetForm() {
 
     if (files && files.length === 1 && files[0].size <= maxFileSize) {
       setFile(files[0]);
-    } else {
-      alert("check file size or upload");
     }
   };
 
@@ -128,11 +126,12 @@ export default function PostTweetForm() {
         required
         rows={5}
         maxLength={180}
+        value={tweet}
         placeholder="What is happening?"
         onChange={handleChange}
       />
       <AttachFileButton htmlFor="file">
-        {file ? "Photo added" : "Add phto"}
+        {file ? "Photo Added✅" : "Add Photo"}
       </AttachFileButton>
       <AttachFileInput
         id="file"
